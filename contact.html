@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Lifewood</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- HEADER & NAVIGATION BAR                       -->
+    <!-- ============================================= -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <!-- IMPORTANT: Replace with path to your logo -->
+                <img src="assets/life.png" alt="Lifewood Logo" class="logo-image">
+            </a>
+            <nav id="main-nav" class="main-nav">
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="our-company.html">Our Company</a></li>
+                    <!-- The active class highlights the current page link -->
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu Hamburger Button -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================= -->
+        <!-- CONTACT                         -->
+        <!-- ============================================= -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p>We’d love to hear from you. Reach out for business inquiries, support, or partnership opportunities.</p>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- CONTACT SECTION (2-COLUMN LAYOUT)           -->
+        <!-- ============================================= -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- Left Column: Contact Form -->
+                    <div class="form-container">
+                        <h2>Send Us a Message</h2>
+                        <form action="#" method="post" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="e.g., Business Inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help..."></textarea>
+                            </div>
+                            <button type="submit" class="cta-button-main">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column: Contact Details -->
+                    <div class="contact-details">
+                        <h3>Direct Contact</h3>
+                        <p>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:hello@lifewood.com">hello@lifewood.com</a>
+                        </p>
+                        <p>
+                            <strong>Phone:</strong><br>
+                            +1 (555) 123-4567
+                        </p>
+                        
+                        <h3 class="details-heading">Our Headquarters</h3>
+                        <p>
+                            Lifewood Inc.<br>
+                            Cebu IT Park<br>
+                            Salinas Drive Apas Lahug, Cebu City, 6000
+                        </p>
+                        <p>
+                            Visit us at our office: 
+                            <a href="https://maps.app.goo.gl/4qT9iaqt31UktSZr6" target="_blank" rel="noopener noreferrer">
+                            View on Google Maps
+                         </a>
+                        </p>
+                        <!-- Map Placeholder -->
+                        <div class="map-placeholder">
+                            <!-- IMPORTANT: Replace with path to your map image -->
+                            <img src="assets/map.png" alt="Map showing office location">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- ============================================= -->
+<!-- FOOTER (FINAL & CORRECT STRUCTURE)          -->
+<!-- ============================================= -->
+<footer class="main-footer">
+    <div class="container">
+        <!-- Column 1: Lifewood Logo & Contact Button -->
+        <div class="footer-col footer-col-main-logo">
+            <div class="footer-branding-group">
+                <a href="index.html" class="footer-main-logo-link">
+                    <!-- IMPORTANT: Use the logo with a transparent background.
+                         The CSS will create the light background box. -->
+                    <img src="assets/Lifewood - logo.png" alt="Lifewood Logo" class="footer-main-logo-img">
+                </a>
+                <a href="contact.html" class="footer-contact-btn">
+                    Contact us →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wrapper for the middle columns -->
+        <div class="footer-links-wrapper">
+            <!-- Column 2: Menu Links -->
+            <div class="footer-col">
+                <h4>MENU</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="our-company.html">Our Company</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Column 3: Social Media (Simplified) -->
+            <div class="footer-col">
+                <h4>FOLLOW US</h4>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/lifewood-data-technology-ltd.?originalSubdomain=ph" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+                    <a href="https://www.youtube.com/results?search_query=lifewood" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Second Logo (Bottom Right) -->
+        <div class="footer-col footer-col-second-logo">
+            <a href="#" class="footer-secondary-logo-link">
+                 <!-- IMPORTANT: Use the 'Be Amazed' logo with a transparent background. -->
+                <img src="assets/be amazed.png" alt="Be Amazed Logo" class="footer-logo-image-secondary">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- This section will contain the copyright bar -->
+<div class="footer-bottom">
+    <div class="container">
+        <p>© 2025 Lifewood. All rights reserved.</p>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Lifewood</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   
+               

@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Company - Lifewood</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================= */
+        /* GLOBAL STYLES & BRAND PALETTE                 */
+        /* ============================================= */
+        :root {
+            --paper: #f5eedb;
+            --white: #ffffff;
+            --dark-serpent: #133020;
+            --castleton-green: #046241;
+
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Lora', serif;
+            --font-tertiary: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--dark-serpent);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--dark-serpent);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.5rem; }
+        
+        a {
+            color: var(--castleton-green);
+            text-decoration: none;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        
+        /* ============================================= */
+        /* YOUR HEADER & NAVIGATION BAR CSS              */
+        /* ============================================= */
+        .main-header {
+            background-color: var(--paper);
+            padding: 15px 0;
+            border-bottom: 1px solid #dcd1b8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-image {
+            max-height: 45px;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .main-nav a {
+            color: var(--dark-serpent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 13px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--castleton-green);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--castleton-green);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION FOR THIS PAGE (Adapted from provided CSS) --- */
+        .hero-image-container {
+            position: relative;
+            color: var(--white);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2070&auto=format&fit=crop'); /* Placeholder Image - Replace with your own */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-text-overlay h1 {
+            color: var(--white);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-text-overlay .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- 2. MISSION SECTION (ADAPTED) --- */
+        #mission {
+            background-color: var(--paper);
+            text-align: center;
+        }
+
+        #mission .mission-statement {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--dark-serpent);
+        }
+        
+        /* --- 3. IMPACT SECTION (ADAPTED) --- */
+        #impact .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .impact-image { flex: 1; }
+        .impact-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .impact-text { flex: 1.2; }
+        .impact-text blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            border-left: 4px solid var(--castleton-green);
+            padding-left: 20px;
+            margin-top: 2rem;
+            color: #555;
+        }
+
+        /* --- 4. VALUES SECTION (ADAPTED) --- */
+        #values {
+            background-color: var(--paper);
+        }
+        #values h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .value-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e0d8c5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(19, 48, 32, 0.1);
+        }
+        .value-item svg {
+            width: 50px;
+            height: 50px;
+            color: var(--castleton-green);
+            margin-bottom: 1rem;
+        }
+        .value-item h3 {
+            color: var(--castleton-green);
+            font-size: 1.25rem;
+        }
+        
+        /* --- 5. DIFFERENCE SECTION (ADAPTED) --- */
+        #difference {
+            background-color: var(--dark-serpent);
+            color: var(--paper);
+            text-align: center;
+        }
+        #difference h2 { color: var(--paper); }
+        #difference p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+        #difference .final-statement {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--paper);
+            margin-top: 3rem;
+            line-height: 1.3;
+        }
+        #difference .final-statement span {
+            color: var(--castleton-green);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* --- 6. CTA SECTION (ADAPTED) --- */
+        #cta { text-align: center; }
+        .cta-buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background-color: var(--castleton-green);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-serpent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .btn-secondary {
+            background-color: var(--dark-serpent);
+            color: var(--white);
+        }
+        .btn-secondary:hover {
+            background-color: var(--castleton-green);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================= */
+        /* YOUR FOOTER CSS (FINAL, CONSISTENT DESIGN)    */
+        /* ============================================= */
+        .main-footer {
+            background-color: var(--castleton-green);
+            color: var(--paper);
+            padding: 60px 0;
+            font-family: var(--font-secondary);
+        }
+        .main-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col { min-width: 180px; }
+        .footer-col a { color: var(--paper); }
+
+        .footer-col-main-logo { flex-basis: 250px; flex-grow: 0; }
+        .footer-branding-group { display: inline-flex; flex-direction: column; }
+        .footer-main-logo-link {
+            display: inline-block;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 10px;
+        }
+        .footer-main-logo-img { max-width: 155px; }
+        .footer-contact-btn {
+            display: inline-block;
+            border: 1px solid var(--paper);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: var(--font-secondary);
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .footer-contact-btn:hover {
+            background-color: var(--paper);
+            color: var(--castleton-green);
+        }
+        .footer-links-wrapper {
+            display: flex;
+            gap: 80px;
+            flex-grow: 1;
+            justify-content: flex-start;
+            padding-left: 50px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-tertiary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { font-size: 1.1rem; transition: opacity 0.3s; }
+        .footer-col ul li a:hover { opacity: 0.8; }
+        .social-links { display: flex; gap: 15px; list-style: none; }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--paper);
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: var(--paper);
+            color: var(--castleton-green);
+        }
+        .footer-col-second-logo {
+            align-self: flex-end;
+            text-align: right;
+            flex-grow: 1;
+        }
+        .footer-secondary-logo-link {
+            display: inline-block;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .footer-logo-image-secondary { max-width: 150px; }
+        .footer-bottom {
+            background-color: var(--dark-serpent);
+            color: #a0a0a0;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-family: var(--font-secondary);
+        }
+        .footer-bottom p { margin: 0; }
+
+        /* ============================================= */
+        /* YOUR RESPONSIVE DESIGN CSS                    */
+        /* ============================================= */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-links-wrapper { flex-direction: column; gap: 30px; padding-left: 0; width: 100%; order: 3; }
+            .main-footer .container { justify-content: space-between; }
+            .footer-col-second-logo { align-self: center; text-align: center; margin-top: 20px; }
+        }
+        
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero-image-container { height: 70vh; }
+            #impact .container { flex-direction: column; text-align: center; }
+            .impact-image { margin-bottom: 2rem; }
+            .impact-text blockquote { margin: 2rem auto 0; }
+            .values-grid { grid-template-columns: 1fr; }
+            #difference .final-statement { font-size: 2rem; }
+            
+            /* --- Mobile Navigation Styles --- */
+            .main-nav { 
+                display: none; 
+                position: absolute;
+                top: 71px; 
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                z-index: 999;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .main-nav.is-open { display: block; }
+            .main-nav.is-open ul { flex-direction: column; gap: 0; }
+            .main-nav.is-open li { width: 100%; text-align: center; }
+            .main-nav.is-open a { display: block; padding: 20px; border-bottom: 1px solid #f0f0f0; }
+            .main-nav.is-open a::after { display: none; }
+            .menu-toggle { 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30px;
+                height: 24px;
+            }
+            .menu-toggle .bar {
+                display: block; width: 100%; height: 3px;
+                background-color: var(--dark-serpent);
+                border-radius: 2px;
+                transition: all 0.3s ease-in-out;
+            }
+            .menu-toggle.is-open .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+            .menu-toggle.is-open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.is-open .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+            /* --- Mobile Footer Styles --- */
+            .main-footer .container { flex-direction: column; align-items: center; gap: 40px; }
+            .footer-col, .footer-col-main-logo, .footer-col-second-logo { width: 100%; align-self: auto; text-align: center; }
+            .footer-col .social-links { justify-content: center; }
+            .footer-links-wrapper { order: 0; }
+            .footer-logo-image-secondary { display: block; margin: 0 auto; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ======================= YOUR HEADER ======================= -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <!-- Replace with your logo SVG or PNG -->
+                <img src="assets/life.png" alt="Lifewood Logo" class="logo-image">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="our-company.html">OUR COMPANY</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+            </nav>
+            <button class="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================= HERO SECTION ======================= -->
+        <section class="hero-image-container">
+            <div class="hero-text-overlay">
+                <h1>Technology with a Human Heart</h1>
+                <p class="subtitle">
+                    We are more than a leading provider of AI data solutions — we are a company built on values, driven by purpose, and shaped by people.
+                </p>
+            </div>
+        </section>
+
+        <!-- ======================= MISSION SECTION ======================= -->
+        <section id="mission">
+            <div class="container">
+                <h2>Our Mission is Clear</h2>
+                <p class="mission-statement">
+                    "To harness the power of AI in ways that uplift communities, empower individuals, and redefine what ethical innovation looks like in the modern world. We believe every line of data we process must have a positive impact on lives."
+                </p>
+            </div>
+        </section>
+
+        <!-- ======================= IMPACT SECTION ======================= -->
+        <section id="impact">
+            <div class="container">
+                <div class="impact-image">
+                    <!-- Replace with a real photo of Tilotom or a similar impact story -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" alt="A confident team leader in an office setting">
+                </div>
+                <div class="impact-text">
+                    <h3>A Company With a Heart</h3>
+                    <p>
+                        While we proudly deliver cutting-edge AI services to global enterprises, we do so with an unshakeable belief in <strong>care, inclusion, and empowerment</strong>. We create real, lasting change, from providing tech-based jobs to women in Bangladesh to equipping people with disabilities with industry-leading digital skills.
+                    </p>
+                    <blockquote>
+                        One powerful example is Tilotom, a determined young man born physically disabled. Through Lifewood’s inclusive training, he rose to become one of our top-performing team leaders, supporting his entire family.
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= VALUES SECTION ======================= -->
+        <section id="values">
+            <div class="container">
+                <h2>Our Values in Action</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="title-diversity"><title id="title-diversity">Diversity Icon</title><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962AF3.375 18.001 3.375 7.501 9.375 1.5 15 7.5 15 18.001h-5.625zM12 12.75a3 3 0 00-3-3m0 3a3 3 0 013-3m0 3v6.75m0-6.75a3 3 0 013 3m-3-3a3 3 0 00-3 3m3 3a3 3 0 01-3 3m3-3v6.75" /></svg>
+                        <h3>Diversity</h3>
+                        <p>We thrive on cultural differences and diverse perspectives, knowing they foster stronger innovation and empathy.</p>
+                    </div>
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="title-caring"><title id="title-caring">Caring Icon</title><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <h3>Caring</h3>
+                        <p>We deeply value every person, believing that real care turns work into meaningful contribution.</p>
+                    </div>
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="title-innovation"><title id="title-innovation">Innovation Icon</title><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 01-7.5 0c1.433-2.344 3.467-4.22 5.824-5.364M12 2.25a7.487 7.487 0 00-4.536 1.353m4.536-1.353a7.487 7.487 0 014.536 1.353m0 0a12.04 12.04 0 01-8.318 15.12" /></svg>
+                        <h3>Innovation</h3>
+                        <p>Technology moves fast — so do we. Lifewood stays ahead by continuously challenging the norm and building smarter, more ethical AI.</p>
+                    </div>
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="title-integrity"><title id="title-integrity">Integrity Icon</title><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.016h-.008v-.016z" /></svg>
+                        <h3>Integrity</h3>
+                        <p>Doing what’s right isn’t optional. Our work is grounded in ethical decision-making and long-term sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= DIFFERENCE SECTION ======================= -->
+        <section id="difference">
+            <div class="container">
+                <h2>The Lifewood Difference</h2>
+                <p>
+                    We are building a future where <strong>technology serves humanity</strong>, not the other way around. Our journey is about bridging opportunity gaps, redefining global work standards, and delivering AI solutions that benefit businesses <em>and</em> communities.
+                </p>
+                <h3 class="final-statement">
+                    At Lifewood, we don’t just develop AI —<br><span>we develop people.</span>
+                </h3>
+            </div>
+        </section>
+
+        <!-- ======================= CTA SECTION ======================= -->
+        <section id="cta">
+            <div class="container">
+                <h2>Ready to Make an Impact?</h2>
+                <div class="cta-buttons">
+                    <a href="services.html" class="btn btn-primary">Explore Our Solutions</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= YOUR FOOTER ======================= -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-col footer-col-main-logo">
+                <div class="footer-branding-group">
+                    <a href="index.html" class="footer-main-logo-link">
+                        <!-- Replace with your logo -->
+                        <img src="assets/Lifewood - logo.png" alt="Lifewood Logo" class="footer-main-logo-img">
+                    </a>
+                    <a href="contact.html" class="footer-contact-btn">Contact</a>
+                </div>
+            </div>
+            <div class="footer-links-wrapper">
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="our-company.html">Our Company</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="https://www.linkedin.com/company/lifewood-data-technology-ltd.?originalSubdomain=ph" aria-label="LinkedIn">LI</a></li>
+                        <li><a href="https://www.youtube.com/results?search_query=lifewood" aria-label="Yotube">YT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col footer-col-second-logo">
+                 <a href="#" class="footer-secondary-logo-link">
+                    <!-- Replace with your secondary logo -->
+                    <img src="assets/be amazed.png" alt="Secondary Lifewood Logo" class="footer-logo-image-secondary">
+                 </a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2025 Lifewood. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-open');
+            mainNav.classList.toggle('is-open');
+        });
+    </script>
+    
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Company - Lifewood</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================= */
+        /* GLOBAL STYLES & BRAND PALETTE                 */
+        /* ============================================= */
+        :root {
+            --paper: #f5eedb;
+            --white: #ffffff;
+            --dark-serpent: #133020;
+            --castleton-green: #046241;
+
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Lora', serif;
+            --font-tertiary: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--dark-serpent);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--dark-serpent);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.5rem; }
+        
+        a {
+            color: var(--castleton-green);
+            text-decoration: none;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        
+        /* ============================================= */
+        /* YOUR HEADER & NAVIGATION BAR CSS              */
+        /* ============================================= */
+        .main-header {
+            background-color: var(--paper);
+            padding: 15px 0;
+            border-bottom: 1px solid #dcd1b8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-image {
+            max-height: 45px;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .main-nav a {
+            color: var(--dark-serpent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 13px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--castleton-green);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--castleton-green);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION FOR THIS PAGE (Adapted from provided CSS) --- */
+        .hero-image-container {
+            position: relative;
+            color: var(--white);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2070&auto=format&fit=crop'); /* Placeholder Image - Replace with your own */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-text-overlay h1 {
+            color: var(--white);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-text-overlay .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- 2. MISSION SECTION (ADAPTED) --- */
+        #mission {
+            background-color: var(--paper);
+            text-align: center;
+        }
+
+        #mission .mission-statement {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--dark-serpent);
+        }
+        
+        /* --- 3. IMPACT SECTION (ADAPTED) --- */
+        #impact .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .impact-image { flex: 1; }
+        .impact-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .impact-text { flex: 1.2; }
+        .impact-text blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            border-left: 4px solid var(--castleton-green);
+            padding-left: 20px;
+            margin-top: 2rem;
+            color: #555;
+        }
+
+        /* --- 4. VALUES SECTION (ADAPTED) --- */
+        #values {
+            background-color: var(--paper);
+        }
+        #values h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .value-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e0d8c5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(19, 48, 32, 0.1);
+        }
+        .value-item svg {
+            width: 50px;
+            height: 50px;
+            color: var(--castleton-green);
+            margin-bottom: 1rem;
+        }
+        .value-item h3 {
+            color: var(--castleton-green);
+            font-size: 1.25rem;
+        }
+        
+        /* --- 5. DIFFERENCE SECTION (ADAPTED) --- */
+        #difference {
+            background-color: var(--dark-serpent);
+            color: var(--paper);
+            text-align: center;
+        }
+        #difference h2 { color: var(--paper); }
+        #difference p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+        #difference .final-statement {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--paper);
+            margin-top: 3rem;
+            line-height: 1.3;
+        }
+        #difference .final-statement span {
+            color: var(--castleton-green);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* --- 6. CTA SECTION (ADAPTED) --- */
+        #cta { text-align: center; }
+        .cta-buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background-color: var(--castleton-green);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-serpent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .btn-secondary {
+            background-color: var(--dark-serpent);
+            color: var(--white);
+        }
+        .btn-secondary:hover {
+            background-color: var(--castleton-green);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================= */
+        /* YOUR FOOTER CSS (FINAL, CONSISTENT DESIGN)    */
+        /* ============================================= */
+        .main-footer {
+            background-color: var(--castleton-green);
+            color: var(--paper);
+            padding: 60px 0;
+            font-family: var(--font-secondary);
+        }
+        .main-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col { min-width: 180px; }
+        .footer-col a { color: var(--paper); }
+
+        .footer-col-main-logo { flex-basis: 250px; flex-grow: 0; }
+        .footer-branding-group { display: inline-flex; flex-direction: column; }
+        .footer-main-logo-link {
+            display: inline-block;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 10px;
+        }
+        .footer-main-logo-img { max-width: 155px; }
+        .footer-contact-btn {
+            display: inline-block;
+            border: 1px solid var(--paper);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: var(--font-secondary);
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .footer-contact-btn:hover {
+            background-color: var(--paper);
+            color: var(--castleton-green);
+        }
+        .footer-links-wrapper {
+            display: flex;
+            gap: 80px;
+            flex-grow: 1;
+            justify-content: flex-start;
+            padding-left: 50px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-tertiary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { font-size: 1.1rem; transition: opacity 0.3s; }
+        .footer-col ul li a:hover { opacity: 0.8; }
+        .social-links { display: flex; gap: 15px; list-style: none; }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--paper);
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: var(--paper);
+            color: var(--castleton-green);
+        }
+        .footer-col-second-logo {
+            align-self: flex-end;
+            text-align: right;
+            flex-grow: 1;
+        }
+        .footer-secondary-logo-link {
+            display: inline-block;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .footer-logo-image-secondary { max-width: 150px; }
+        .footer-bottom {
+            background-color: var(--dark-serpent);
+            color: #a0a0a0;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-family: var(--font-secondary);
+        }
+        .footer-bottom p { margin: 0; }
+
+        /* ============================================= */
+        /* YOUR RESPONSIVE DESIGN CSS                    */
+        /* ============================================= */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-links-wrapper { flex-direction: column; gap: 30px; padding-left: 0; width: 100%; order: 3; }
+            .main-footer .container { justify-content: space-between; }
+            .footer-col-second-logo { align-self: center; text-align: center; margin-top: 20px; }
+        }
+        
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero-image-container { height: 70vh; }
+            #impact .container { flex-direction: column; text-align: center; }
+            .impact-image { margin-bottom: 2rem; }
+            .impact-text blockquote { margin: 2rem auto 0; }
+            .values-grid { grid-template-columns: 1fr; }
+            #difference .final-statement { font-size: 2rem; }
+            
+            /* --- Mobile Navigation Styles --- */
+            .main-nav { 
+                display: none; 
+                position: absolute;
+                top: 71px; 
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                z-index: 999;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .main-nav.is-open { display: block; }
+            .main-nav.is-open ul { flex-direction: column; gap: 0; }
+            .main-nav.is-open li { width: 100%; text-align: center; }
+            .main-nav.is-open a { display: block; padding: 20px; border-bottom: 1px solid #f0f0f0; }
+            .main-nav.is-open a::after { display: none; }
+            .menu-toggle { 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30px;
+                height: 24px;
+            }
+            .menu-toggle .bar {
+                display: block; width: 100%; height: 3px;
+                background-color: var(--dark-serpent);
+                border-radius: 2px;
+                transition: all 0.3s ease-in-out;
+            }
+            .menu-toggle.is-open .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+            .menu-toggle.is-open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.is-open .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+            /* --- Mobile Footer Styles --- */
+            .main-footer .container { flex-direction: column; align-items: center; gap: 40px; }
+            .footer-col, .footer-col-main-logo, .footer-col-second-logo { width: 100%; align-self: auto; text-align: center; }
+            .footer-col .social-links { justify-content: center; }
+            .footer-links-wrapper { order: 0; }
+            .footer-logo-image-secondary { display: block; margin: 0 auto; }
+        }
+
+    </style>
+</head>
+<body>
+

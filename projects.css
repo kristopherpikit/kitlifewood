@@ -1,0 +1,425 @@
+/* ============================================= */
+/* 1. ROOT VARIABLES & GLOBAL STYLES             */
+/* ============================================= */
+:root {
+    --color-paper: #f5eedb;
+    --color-white: #ffffff;
+    --color-dark-serpent: #133020;
+    --color-castleton-green: #046241;
+    --color-text-dark: #2c3e50; /* A slightly softer black for text */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Lora', serif;
+}
+
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-white); /* White background for the main content area */
+    color: var(--color-text-dark);
+    line-height: 1.7;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ============================================= */
+/* 2. HEADER & NAVIGATION                        */
+/* ============================================= */
+.main-header {
+    background-color: var(--color-paper);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image {
+    max-height: 45px; /* Controls the logo size */
+}
+
+/* Desktop Navigation Styles */
+.main-nav ul {
+    display: flex;
+    gap: 50px; /* As requested */
+}
+
+.main-nav a {
+    font-size: small; /* As requested */
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.main-nav a:not(.active-link):hover { color: var(--castleton-green); }
+
+.main-nav a:hover {
+    color: var(--color-castleton-green);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-castleton-green);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none; /* Hidden on desktop by default */
+    flex-direction: column;
+    justify-content: space-around; /* MODIFIED: Better spacing for bars */
+    width: 30px; /* MODIFIED: Set explicit size */
+    height: 24px; /* MODIFIED: Set explicit size */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Above the nav */
+}
+
+.menu-toggle .bar {
+    width: 100%; /* MODIFIED: Use 100% of the button's width */
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out; /* MODIFIED: Smoother overall transition */
+}
+
+/* MODIFIED: ADDED STYLES FOR THE "X" ANIMATION */
+.menu-toggle.is-open .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.menu-toggle.is-open .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.is-open .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+
+/* ============================================= */
+/* 3. MAIN CONTENT (PROJECTS PAGE)               */
+/* ============================================= */
+.page-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+}
+
+.page-hero h1 {
+    font-family: var(--font-secondary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.lead-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Project Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding-bottom: 80px;
+}
+
+.card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--color-dark-serpent);
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+
+/* ============================================= */
+/* 4. FOOTER (New Design from Image)             */
+/* ============================================= */
+.main-footer {
+    background-color:#046241; /* This will now work correctly */
+    color: var(--paper); /* This will also work */
+    padding: 40px 0;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col {
+    min-width: 180px;
+}
+
+.footer-col-main-logo {
+    flex-basis: 250px;
+    flex-grow: 0;
+}
+.footer-branding-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+.footer-main-logo-link {
+    display: inline-block;
+    background-color: #eaf0eb;
+    padding: 2px 2px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+.footer-main-logo-img {
+    max-width: 150px;
+}
+.footer-contact-btn { display: inline-block; border: 1px solid var(--paper); padding: 10px 20px; border-radius: 4px; font-family: 'Lora', serif; font-size: 1.1rem; transition: background-color 0.3s, color 0.3s; }
+.footer-contact-btn:hover { background-color: var(--paper); color: var(--castleton-green); }
+
+.footer-links-wrapper {
+    display: flex;
+    gap: 80px;
+    flex-grow: 1;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+.footer-col h4 {
+    font-family: var(--font-primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+.footer-col ul li a {
+    font-family: var(--font-secondary);
+    color:white;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+}
+.footer-col ul li a:hover {
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+.social-links a {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--paper);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+.social-links a:hover {
+    background-color: var(--paper);
+    color: var(--castleton-green);
+}
+
+.footer-col-second-logo {
+    align-self: flex-end;
+    text-align: right;
+    flex-grow: 1;
+}
+.footer-secondary-logo-link {
+    display: inline-block;
+    background-color: #eaf0eb;
+    border-radius: 8px;
+}
+.footer-logo-image-secondary {
+    max-width: 150px;
+}
+
+.footer-bottom {
+    background-color: #133020; /* This will now work */
+    color: #a0a0a0;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.footer-bottom p {
+    margin: 0;
+}
+
+
+/* ============================================= */
+/* 5. RESPONSIVE DESIGN (MEDIA QUERIES)          */
+/* ============================================= */
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Activate Hamburger Menu --- */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .main-nav.is-open {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav a {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .main-nav a::after,
+    .main-nav a.active-link::after {
+        display: none; /* Hide underlines on mobile nav */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* --- Main Content Adjustments --- */
+    .page-header-projects {
+        padding: 60px 0;
+    }
+    .page-header-projects h1 {
+        font-size: 2.2rem;
+    }
+    .projects-section {
+        padding: 60px 0;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    /* --- Footer Adjustments (MODIFIED) --- */
+    .main-footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-links-wrapper {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin: 30px 0;
+    }
+    .footer-col-second-logo {
+        align-self: center; /* Center the second logo */
+        margin-top: 20px;
+    }
+}

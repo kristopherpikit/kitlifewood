@@ -1,0 +1,449 @@
+/* ============================================= */
+/* CSS VARIABLES & GENERAL STYLES              */
+/* ============================================= */
+:root {
+    --paper: #f5eedb;
+    --white: #ffffff;
+    --dark-serpent: #133020;
+    --castleton-green: #046241;
+    --text-light-gray: #777;
+}
+
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    background-color: var(--paper);
+    color: var(--dark-serpent);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ============================================= */
+/* HEADER & NAVIGATION BAR                       */
+/* ============================================= */
+.main-header {
+    background-color: var(--paper);
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image {
+    max-height: 45px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 50px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    color: var(--dark-serpent);
+    transition: color 0.3s ease;
+    font-size: small;
+}
+
+.main-nav a:hover {
+    color: var(--castleton-green);
+}
+
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ============================================= */
+/* PAGE HEADER BANNER                            */
+/* ============================================= */
+.page-header {
+    position: relative;
+    height: 100vh; /* MODIFIED: Makes the section fill the entire viewport height */
+    color: var(--white);
+    text-align: center;
+    
+    /* MODIFIED: Using Flexbox to perfectly center the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* IMPORTANT: Replace with the path to your photo */
+    background-image: url("../assets/pressmedia.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark overlay for readability (this remains the same) */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 48, 32, 0.6); /* Dark Serpent overlay */
+    z-index: 1;
+}
+
+/* This container holds the text and keeps it above the overlay */
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* ============================================= */
+/* CONTENT & ARTICLE CARDS                       */
+/* ============================================= */
+.content-section {
+    padding: 80px 0;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card.article-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-category {
+    color: var(--castleton-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: var(--text-light-gray);
+    margin-bottom: 15px;
+}
+
+.article-content > p:not(.article-category):not(.meta-info) {
+    flex-grow: 1; /* Pushes the 'Read More' link to the bottom */
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.read-more {
+    font-weight: 700;
+    color: var(--castleton-green);
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--dark-serpent);
+}
+
+
+/* ============================================= */
+/* FOOTER SECTION                                */
+/* ============================================= */
+.main-footer {
+    color: var(--paper);
+}
+
+.footer-main-content {
+    background-color: var(--castleton-green);
+    padding: 60px 0;
+}
+
+.footer-main-content .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* MODIFIED: Aligns all columns to the top */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* === NEW: Container for the first column's content === */
+.footer-col-main-logo {
+    /* This ensures the content inside can be centered easily */
+    display: flex;
+    justify-content: flex-start; /* Aligns to left on desktop */
+}
+
+/* === NEW: A group for the logo and button to control their alignment and spacing === */
+.footer-branding-group {
+    display: flex;
+    flex-direction: column; /* Stacks the logo and button vertically */
+    align-items: flex-start; /* Aligns them to the left */
+}
+
+/* === NEW: Styling for the main logo image to add the white box and spacing === */
+.footer-main-logo-img {
+    background-color: var(--white); /* Creates the white background */
+    padding: 10px 15px; /* Adds space inside the white box */
+    border-radius: 4px; /* Optional: slightly rounded corners */
+    max-width: 130px; /* Controls the logo size */
+    margin-bottom: 20px; /* THIS IS THE KEY: Adds space between the logo and the button */
+}
+
+
+.contact-button-footer {
+    display: inline-block;
+    border: 1px solid var(--paper);
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.contact-button-footer:hover {
+    background-color: var(--paper);
+    color: var(--castleton-green);
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid var(--paper);
+    border-radius: 50%;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--paper);
+    color: var(--castleton-green);
+}
+
+/* === NEW STYLES FOR THE SECOND LOGO === */
+.footer-col-secondary-logo {
+    flex-grow: 0; /* Prevents it from growing larger than its content */
+    flex-basis: auto; /* Let it size based on its width */
+    text-align: center;
+    align-self: center; /* This pushes it to the bottom of the footer */
+}
+
+.footer-logo-image-secondary {
+    max-width: 150px; /* Adjust the size of your second logo as needed */
+}
+
+
+.footer-bottom {
+    background-color: var(--dark-serpent);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN                             */
+/* ============================================= */
+@media (max-width: 992px) {
+    .grid-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* --- Mobile Navigation Styles (These are correct) --- */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .main-nav.is-open {
+        display: block;
+    }
+    .main-nav.is-open ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-nav.is-open li {
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav.is-open a {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .menu-toggle .bar {
+        display: block; width: 100%; height: 3px;
+        background-color: var(--dark-serpent);
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu-toggle.is-open .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .menu-toggle.is-open .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-open .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+
+    /* --- Your Other Mobile Styles (Unchanged) --- */
+    .page-header h1, .showcase-section h2 {
+        font-size: 2.5rem;
+    }
+    .grid-3-col, .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ========================================= */
+    /* --- FINAL CORRECTED FOOTER STYLES --- */
+    /* ========================================= */
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stacks the columns */
+        text-align: center;       /* THIS IS THE KEY: It centers all inline or inline-block children */
+    }
+
+    .footer-col {
+        min-width: 100%;
+        margin-bottom: 40px; /* Adds space between stacked sections */
+    }
+    
+    /* THE MAGIC TRICK IS HERE: */
+    .footer-col ul {
+        display: inline-block; /* Makes the <ul> behave like a single word that can be centered */
+        text-align: left;      /* Overrides the parent's centering for the text INSIDE the list */
+    }
+    
+    .social-links {
+        justify-content: center; /* This is correct for centering flex items */
+    }
+
+    /* This will center any logos or buttons within the footer */
+    .footer-col img,
+    .footer-col .contact-button-footer {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Ensure the copyright text is centered too */
+    .footer-bottom p {
+        text-align: center;
+    }
+}

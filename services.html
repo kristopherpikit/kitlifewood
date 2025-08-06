@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services - Lifewood</title>
+    
+    <!-- IMPORTANT: Linking to the new, dedicated services.css file -->
+    <link rel="stylesheet" href="css/services.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER (Identical to the final index.html design) -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link"><img src="assets/life.png" alt="Lifewood Logo" class="logo-image"></a>
+            <nav id="main-nav" class="main-nav">
+                <ul>
+                    <!-- CORRECTED: Using 'active-link' to match the final CSS for the underline -->
+                    <li><a href="services.html" class="active-link">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="our-company.html">Our Company</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Page Header Banner -->
+        <section class="page-header">
+            <div class="container">
+                
+                <h1>AI Services</h1>
+                <p>Powering the next generation of intelligent systems with precision data and expert validation.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Introductory Context -->
+        <section class="intro-section">
+            <div class="container">
+                <h2>The Foundation for Intelligent Systems</h2>
+                <p>At Lifewood, we believe that the most powerful AI is built on a foundation of pristine, meticulously prepared data. Our suite of services is designed to be a seamless extension of your team, providing the critical data solutions and validation needed to move from concept to real-world impact.</p>
+            </div>
+        </section>
+        
+<!-- ============================================= -->
+<!-- SECTION 3: YOUR OWN VIDEO SHOWCASE (REVISED)  -->
+<!-- ============================================= -->
+<section class="video-showcase-section">
+    <!-- This video now acts as a background -->
+    <video autoplay muted loop playsinline class="showcase-background-video">
+        <!-- IMPORTANT: Replace with the path to your video file -->
+        <source src="assets/vices.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- This adds a dark layer for text readability -->
+    <div class="video-overlay"></div>
+
+    <!-- Any content you want ON TOP of the video goes here -->
+    <div class="container">
+        <!-- You can add a heading or other content later -->
+        <!-- Example: <h2>See Our Process in Action</h2> -->
+    </div>
+</section>
+
+        <!-- Section 4: The Vertical Service Cards -->
+        <section class="services-list-section">
+            <div class="container">
+                <h2 class="section-title">Our Core Capabilities</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <img src="assets/data-annotation.jpeg" alt="Data Annotation & Labeling">
+                        <div class="service-content">
+                            <div class="service-number">01</div>
+                            <h3>Data Annotation & Labeling</h3>
+                            <p>We provide high-quality, scalable annotation for images, text, and video. Our expert teams ensure precision labeling to train smarter, more accurate machine learning models.</p>
+                            <div class="use-cases"><strong>Use Cases:</strong> Facial recognition, autonomous driving, sentiment analysis.</div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="assets/NLP.jpeg" alt="Natural Language Processing (NLP) Solutions">
+                        <div class="service-content">
+                            <div class="service-number">02</div>
+                            <h3>Natural Language Processing</h3>
+                            <p>Our language services help AI understand human language. This includes entity recognition, text classification, and multilingual content tagging across 50+ languages.</p>
+                            <div class="use-cases"><strong>Use Cases:</strong> Chatbots, translation engines, content moderation.</div>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="assets/model.jpeg" alt="AI Model Testing & Validation">
+                        <div class="service-content">
+                            <div class="service-number">03</div>
+                            <h3>AI Model Testing & Validation</h3>
+                            <p>We help ensure AI systems behave reliably and ethically, testing for performance, fairness, and bias—especially in high-stakes industries like healthcare and finance.</p>
+                            <div class="use-cases"><strong>Use Cases:</strong> Medical diagnosis, financial risk engines, recruitment AI.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+    </main>
+    
+    <!-- FOOTER (Identical to the final index.html design) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-col footer-col-main-logo"><div class="footer-branding-group"><a href="index.html" class="footer-main-logo-link"><img src="assets/life.png" alt="Lifewood Logo" class="footer-main-logo-img"></a><a href="contact.html" class="footer-contact-btn">Contact us →</a></div></div>
+            <div class="footer-links-wrapper"><div class="footer-col"><h4>MENU</h4><ul><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="our-company.html">Our Company</a></li><li><a href="careers.html">Careers</a></li></ul></div><div class="footer-col"><h4>FOLLOW US</h4><div class="social-links"><a href="https://www.linkedin.com/company/lifewood-data-technology-ltd./?originalSubdomain=ph" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a><a href="https://www.youtube.com/@LifewoodDataTechnology" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a></div></div></div>
+            <div class="footer-col footer-col-second-logo"><a href="#" class="footer-secondary-logo-link"><img src="assets/be amazed.png" alt="Be Amazed Logo" class="footer-logo-image-secondary"></a></div>
+        </div>
+    </footer>
+    <div class="footer-bottom"><div class="container"><p>© 2025 Lifewood. All rights reserved.</p>
+    </div>    <script src="js/main.js"></script></div>
+</body>
+

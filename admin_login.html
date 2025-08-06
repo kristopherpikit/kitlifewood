@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* All your CSS is correct and remains unchanged */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; color: #333; }
+        .login-wrapper { display: flex; width: 100vw; height: 100vh; }
+        .image-column { flex: 1; background-image: url('https://i.pinimg.com/736x/50/c7/b0/50c7b0ca01bb2ec913b4230a196e6269.jpg'); background-size: cover; background-position: center; }
+        .form-column { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; background-color: #FFFFFF; }
+        .form-content-wrapper { width: 100%; max-width: 420px; }
+        h1 { color: #014D40; text-align: center; margin-top: 0; margin-bottom: 10px; font-size: 2.2em; }
+        h2 { text-align: center; color: #444; margin-bottom: 40px; font-weight: 400; font-size: 1.1em; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 500; color: #555; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; transition: border-color 0.3s; background-color: #F0F4F8; font-size: 1em; }
+        input[type="password"] { padding-right: 50px; }
+        input[type="text"]:focus, input[type="password"]:focus { outline: none; border-color: #014D40; }
+        button[type="submit"] { width: 100%; padding: 14px; border-radius: 8px; border: none; font-size: 16px; font-weight: 700; cursor: pointer; transition: background-color 0.3s, transform 0.1s; margin-top: 20px; background-color: #014D40; color: white; }
+        button[type="submit"]:hover { background-color: #00382d; }
+        button:active { transform: scale(0.98); }
+        #errorMessage { color: #D8000C; background-color: #FFD2D2; text-align: center; padding: 10px; border-radius: 5px; margin-top: 20px; font-weight: 500; display: none; }
+        #errorMessage:not(:empty) { display: block; }
+        .password-input-container { position: relative; }
+        #togglePassword { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0; color: #aaa; }
+        #togglePassword:hover { color: #555; }
+        .toggle-password-icon svg { width: 18px; height: 18px; }
+        .icon-eye-slash { display: none; }
+        .back-link { display: block; text-align: center; margin-top: 25px; color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+        .back-link:hover { color: #014D40; text-decoration: underline; }
+        @media (max-width: 768px) { .image-column { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="image-column"></div>
+        <div class="form-column">
+            <div class="form-content-wrapper">
+                <h1>Admin Portal</h1>
+                <section id="loginSection">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginUsername">Username:</label>
+                            <input type="text" id="loginUsername" name="loginUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password:</label>
+                            <div class="password-input-container">
+                                <input type="password" id="loginPassword" name="loginPassword" required>
+                                <button type="button" id="togglePassword" aria-label="Show password">
+                                    <span class="toggle-password-icon icon-eye"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></span>
+                                    <span class="toggle-password-icon icon-eye-slash"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg></span>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                </section>
+                <p id="errorMessage"></p>
+                <a href="index.html" class="back-link">Back to Home</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- === JAVASCRIPT LOGIC RESTORED === -->
+    <script>
+        // --- 1. Get all the necessary elements from the page ---
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const passwordInput = document.getElementById('loginPassword');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const eyeIcon = document.querySelector('.icon-eye');
+        const eyeSlashIcon = document.querySelector('.icon-eye-slash');
+
+        // --- 2. Logic for the "See Password" button ---
+        togglePasswordButton.addEventListener('click', function () {
+            // Check the current type of the password input
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Toggle the eye icons based on the new type
+            if (type === 'text') {
+                eyeIcon.style.display = 'none';
+                eyeSlashIcon.style.display = 'inline';
+            } else {
+                eyeIcon.style.display = 'inline';
+                eyeSlashIcon.style.display = 'none';
+            }
+        });
+
+        // --- 3. Logic for the form submission ---
+        loginForm.addEventListener('submit', (e) => {
+            // Prevent the form from reloading the page
+            e.preventDefault(); 
+            
+            // Get the values entered by the user
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Clear any previous error message
+            errorMessage.textContent = '';
+            
+            // Check if the credentials are correct
+            if (username === 'admin' && password === 'lifewood2004') {
+                // If correct, save a "logged in" status and redirect
+                sessionStorage.setItem('isAdminLoggedIn', 'true');
+                window.location.href = 'admin_dashboard.html';
+            } else {
+                // If incorrect, show an error message
+                errorMessage.textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>

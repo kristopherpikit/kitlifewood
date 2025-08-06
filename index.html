@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifewood - Home</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/index.css">
+    
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- HEADER & NAVIGATION BAR                       -->
+    <!-- ============================================= -->
+   <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="assets/life.png" alt="Lifewood Logo" class="logo-image">
+        </a>
+        <nav id="main-nav" class="main-nav">
+            <ul>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="our-company.html">OUR COMPANY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                
+                <!-- === ADDED ADMIN BUTTON === -->
+                <li>
+                    <a href="admin_login.html" class="admin-link" aria-label="Admin Login">
+                        <img src="assets/admin icon.png" alt="Admin Login Icon">
+                    </a>
+                </li>
+                <!-- === END OF ADDED SECTION === -->
+
+            </ul>
+        </nav>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<main>
+
+    <main>
+<!-- ============================================= -->
+<!-- FULL-PAGE VIDEO BACKGROUND                    -->
+<!-- ============================================= -->
+<section class="hero-video-background">
+    <!-- The video remains the same -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="assets/front.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+
+    <!-- === ADDED CONTENT FOR THE BUTTON === -->
+    <div class="hero-content">
+        <a href="application_form.html" class="cta-button">Apply Now</a>
+    </div>
+    <!-- === END OF ADDED SECTION === -->
+
+</section>
+
+        <!-- ============================================= -->
+        <!-- START: NEW HERO CONTENT & NEWS TICKER SECTION -->
+        <!-- ============================================= -->
+        <section class="hero-content-section">
+            <!-- Part 1: Background Image with Text Overlay -->
+            <!-- Part 2: The News Ticker Bar -->
+            <div class="news-ticker-bar">
+                <div class="container">
+                    <div class="news-label">
+                      LATEST HIGHLIGHTS
+                    </div>
+                    <a href="press.html" class="news-link">
+                        <span class="news-arrow">→</span>
+                        <span class="news-text">Inside the Lifewood Annual Conference: Innovation, Insights, and Impact</span>
+                    </a>
+                    <div class="news-social">
+                        <!-- Reusing the social link structure from the footer -->
+                        <a href="https://www.youtube.com/@LifewoodDataTechnology" class="social-link-item" aria-label="Visit our YouTube channel">
+                            <!-- IMPORTANT: Use a DARK YouTube icon here -->
+                            <img src="assets/youtube.svg" alt="YouTube Icon" class="social-icon">
+                            <div class="social-text">
+                                <span>LIFEWOOD</span>
+                                <span>YOUTUBE CHANNEL</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================= -->
+        <!-- END: NEW HERO CONTENT & NEWS TICKER SECTION   -->
+        <!-- ============================================= -->
+
+        <!-- ============================================= -->
+        <!-- PHOTO & CONTEXT SHOWCASE SECTION              -->
+        <!-- ============================================= -->
+        <section class="showcase-section">
+            <div class="container">
+                <h2>Our Vision in Action</h2>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="assets/integration.jpeg" alt="Advanced AI Integration">
+                        <div class="showcase-text">
+                            <h3>Advanced AI Integration</h3>
+                            <p>We leverage cutting-edge artificial intelligence to transform raw data into actionable insights, driving efficiency and growth.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/tech solutions.jpeg" alt="Sustainable Tech Solutions">
+                        <div class="showcase-text">
+                            <h3>Sustainable Tech Solutions</h3>
+                            <p>Our projects focus on creating technology that not only performs but also contributes to a healthier planet.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/global.jpeg" alt="Global Data Platforms">
+                        <div class="showcase-text">
+                            <h3>Global Data Platforms</h3>
+                            <p>Building scalable and secure platforms that connect and streamline information across international markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================= -->
+    <!-- FOOTER (FINAL & CORRECT STRUCTURE)          -->
+    <!-- ============================================= -->
+    <footer class="main-footer">
+        <div class="container">
+            <!-- Column 1: Lifewood Logo & Contact Button -->
+            <div class="footer-col footer-col-main-logo">
+                <div class="footer-branding-group">
+                    <a href="index.html" class="footer-main-logo-link">
+                        <!-- IMPORTANT: Use the logo with a transparent background.
+                             The CSS will create the light background box. -->
+                        <img src="assets/life.png" alt="Lifewood Logo" class="footer-main-logo-img">
+                    </a>
+                    <a href="contact.html" class="footer-contact-btn">
+                        Contact us →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Wrapper for the middle columns -->
+            <div class="footer-links-wrapper">
+                <!-- Column 2: Menu Links -->
+                <div class="footer-col">
+                    <h4>MENU</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="our-company.html">Our Company</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Column 3: Social Media (Simplified) -->
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/lifewood-data-technology-ltd./?originalSubdomain=ph" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+                        <a href="https://www.youtube.com/@LifewoodDataTechnology    " target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Column 4: Second Logo (Bottom Right) -->
+            <div class="footer-col footer-col-second-logo">
+                <a href="#" class="footer-secondary-logo-link">
+                     <!-- IMPORTANT: Use the 'Be Amazed' logo with a transparent background. -->
+                    <img src="assets/be amazed.png" alt="Be Amazed Logo" class="footer-logo-image-secondary">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- This section will contain the copyright bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2024 Lifewood. All rights reserved.</p>
+        </div>
+    </div>
+    <!-- JavaScript for Mobile Menu -->
+    <script src="js/main.js"></script>
+</body>
+</html>

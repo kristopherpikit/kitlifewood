@@ -1,0 +1,211 @@
+/* ============================================= */
+/* 1. ROOT VARIABLES & GLOBAL STYLES             */
+/* ============================================= */
+:root {
+    --color-paper: #f5eedb;
+    --color-white: #ffffff;
+    --color-dark-serpent: #133020;
+    --color-castleton-green: #046241;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --header-height: 85px;
+    --container-padding: 24px;
+}
+
+/* Basic Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: var(--font-primary);
+    background-color: #0d2115;
+    color: var(--color-dark-serpent);
+    line-height: 1.6;
+}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--container-padding); }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style-type: none; }
+h1, h2, h3 { font-family: var(--font-secondary); }
+
+/* ============================================= */
+/* 2. HEADER & NAVIGATION (MOBILE-FIRST)         */
+/* ============================================= */
+.main-header {
+    background-color: var(--color-paper);
+    padding: 0 var(--container-padding);
+    height: var(--header-height);
+    border-bottom: 1px solid #e0d9c7;
+    position: sticky; top: 0; z-index: 1000;
+    display: flex; align-items: center;
+}
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo-image { height: 45px; width: auto; }
+
+/* Mobile Navigation */
+.main-nav { display: none; }
+.menu-toggle { display: block; background: none; border: none; cursor: pointer; padding: 5px; display: flex; flex-direction: column; gap: 5px; z-index: 1001; }
+.menu-toggle .bar { width: 25px; height: 3px; background-color: var(--color-dark-serpent); border-radius: 2px; transition: all 0.3s ease; }
+
+/* MODIFIED: Changed background to white and panel position back to the right */
+.main-nav.is-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0; /* Positioned to slide from the right */
+    width: 90%;
+    max-width: 320px;
+    height: 100%;
+    background-color: var(--color-white); /* MODIFIED: Set background to white */
+    padding-top: var(--header-height);
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2); /* Shadow on the left */
+}
+.main-nav.is-open ul { padding: 0; }
+
+/* MODIFIED: Changed link and border colors to be visible on a white background */
+.main-nav.is-open li a {
+    display: block;
+    color: var(--color-dark-serpent); /* MODIFIED: Dark text for readability */
+    padding: 15px var(--container-padding);
+    border-bottom: 1px solid #e0d9c7; /* MODIFIED: Lighter border color */
+}
+
+/* MODIFIED: Repositioned the close button to the right */
+.menu-toggle.is-open {
+    position: fixed;
+    right: var(--container-padding);
+}
+
+/* MODIFIED: Changed close button color to be visible on a white background */
+.menu-toggle.is-open .bar {
+    background-color: var(--color-dark-serpent); /* MODIFIED: Dark "X" icon */
+}
+.menu-toggle.is-open .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.is-open .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ============================================= */
+/* 3. CONTACT PAGE STYLES                        */
+/* ============================================= */
+.page-header { height: calc(100vh - var(--header-height)); position: relative; display: flex; align-items: center; justify-content: center; color: var(--color-white); text-align: center; overflow: hidden; background-image: url('../assets/touch.jpeg'); background-size: cover; background-position: center; padding: 0 var(--container-padding); }
+.page-header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.3); }
+.page-header .container { position: relative; z-index: 2; }
+.page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); }
+.page-header p { font-size: 1.rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+.contact-section { padding: 80px 0; background-color: var(--color-paper); }
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 60px; }
+.form-container h2 { margin-bottom: 30px; font-size: 2.25rem; }
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #d1c9b8; border-radius: 5px; background-color: var(--color-white); font-family: inherit; font-size: 1rem; color: var(--color-dark-serpent); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #aaa; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-castleton-green); box-shadow: 0 0 0 3px rgba(4, 98, 65, 0.2); }
+.cta-button-main { background-color: var(--color-castleton-green); color: var(--color-white); border: none; padding: 16px 32px; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
+.cta-button-main:hover { background-color: var(--color-dark-serpent); }
+.contact-details { background-color: var(--color-white); padding: 40px; border-radius: 8px; border: 1px solid #e0d9c7; }
+.contact-details h3 { font-size: 1.75rem; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e0d9c7; }
+.contact-details .details-heading { margin-top: 2rem; }
+.contact-details p { margin-bottom: 1.5rem; line-height: 1.7; font-size: 1rem; }
+.contact-details a { color: var(--color-castleton-green); font-weight: 600; word-break: break-all; }
+.contact-details a:hover { text-decoration: underline; }
+.map-placeholder img { width: 100%; height: auto; border-radius: 5px; margin-top: 1rem; }
+
+/* ============================================= */
+/* FOOTER CSS (REVISED FOR CENTERING)            */
+/* ============================================= */
+:root { --castleton-green: #00563F; --dark-serpent: #1A2421; --footer-text: #FFFFFF; --footer-text-subtle: #a0b5af; --link-hover-color: #c0e0d8; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* MODIFIED: Set text-align to center for all content inside */
+.main-footer {
+    background-color: var(--castleton-green);
+    color: var(--footer-text);
+    padding: 60px 0 20px 0;
+    text-align: center;
+}
+.main-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns themselves */
+    gap: 30px;
+}
+.footer-col { padding: 0 15px; }
+.footer-col h4 { font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 25px; position: relative; padding-bottom: 10px; letter-spacing: 1px; }
+
+/* MODIFIED: Centered underline for headings */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background-color: var(--link-hover-color);
+    height: 2px;
+    width: 50px;
+}
+.footer-col-main-logo { flex-basis: 250px; flex-grow: 1; }
+
+/* MODIFIED: Center align logo and button */
+.footer-branding-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.footer-main-logo-link .footer-main-logo-img { max-width: 160px; height: auto; }
+.footer-contact-btn { background-color: transparent; border: 2px solid var(--footer-text); color: var(--footer-text); padding: 12px 28px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: all 0.3s ease-in-out; }
+.footer-contact-btn:hover { background-color: var(--footer-text); color: var(--castleton-green); transform: translateY(-2px); }
+.footer-links-wrapper { display: flex; gap: 40px; flex-grow: 2; justify-content: center; flex-wrap: wrap; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: var(--footer-text); text-decoration: none; transition: all 0.3s ease; }
+.footer-col ul li a:hover { color: var(--link-hover-color); padding-left: 8px; }
+
+/* MODIFIED: Ensure social links are centered */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.social-links a { display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; border: 2px solid var(--footer-text); border-radius: 50%; color: var(--footer-text); font-weight: bold; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease-in-out; }
+.social-links a:hover { background-color: var(--footer-text); color: var(--castleton-green); transform: scale(1.1); }
+
+/* MODIFIED: Center the secondary logo within its column */
+.footer-col-second-logo {
+    flex-basis: 150px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.footer-logo-image-secondary { max-width: 120px; height: auto; }
+.footer-bottom { background-color: var(--dark-serpent); color: var(--footer-text-subtle); padding: 20px 0; }
+.footer-bottom .container { text-align: center; }
+.footer-bottom p { margin: 0; font-size: 0.875rem; }
+
+/* ============================================= */
+/* 5. MEDIA QUERIES FOR LARGER SCREENS           */
+/* ============================================= */
+@media (min-width: 992px) {
+    /* --- HEADER REDESIGN --- */
+    .menu-toggle { display: none; }
+    .main-nav { display: block; position: static; background: none; box-shadow: none; width: auto; max-width: none; height: auto; padding-top: 0; }
+    .main-nav ul { display: flex; flex-direction: row; align-items: center; gap: 35px; }
+    .main-nav ul li a { padding: 5px; border: none; color: var(--color-dark-serpent); font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; position: relative; }
+    .main-nav ul li a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--color-castleton-green); transition: width 0.3s ease; }
+    .main-nav ul li a:hover::after, .main-nav ul li a.active::after { width: 100%; }
+    .main-nav ul li a.active { color: var(--color-castleton-green); }
+
+    /* --- CONTACT GRID LAYOUT --- */
+    .contact-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* --- FOOTER REDESIGN FOR DESKTOP: MAINTAINING CENTERED CONTENT --- */
+    /* MODIFIED: The rules that previously left-aligned footer content on desktop have been removed.
+       The footer now remains centered on all screen sizes. We only adjust the layout flow and gap. */
+    .main-footer .container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 80px;
+    }
+}
